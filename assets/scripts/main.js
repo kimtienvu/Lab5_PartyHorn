@@ -2,14 +2,11 @@
 // Global variables declared here
 // Input field
 let input = document.getElementById("volume-number");
-input.addEventListener("keyup", changeSlider);
-input.addEventListener("mousedown", changeSlider);
-input.addEventListener("mouseup", changeSlider);
+input.addEventListener("change", changeSlider);
 
 // Slider
 let slider = document.getElementById("volume-slider");
-slider.addEventListener("mousedown", changeInput);
-slider.addEventListener("mouseup", changeInput);
+slider.addEventListener("change", changeInput);
 
 // Volume image
 let volImg = document.getElementById("volume-image");
@@ -37,20 +34,17 @@ honk.addEventListener("click", function(event) {
 
 // move slider bar to value of input field, 
 function changeSlider() {
-  console.log("slider moves");
-  slider.setAttribute('value', input.value);
+  slider.value = input.value;
   changeImg();
   changeLevel();
 }
 // input field update when slider bar changes
 function changeInput() {
-  console.log("input changes");
   input.value = slider.value;
   changeImg();
+  changeSlider();
   changeLevel();
 }
-
-// BUG WHEN SLIDER BEFORE INPUT CHANGE -> Slider not move anymore
 
 // volume icon changes
 function changeImg() {
