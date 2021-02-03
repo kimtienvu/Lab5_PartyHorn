@@ -29,6 +29,7 @@ party.addEventListener("click", changeRadio);
 let honk = document.getElementById("honk-btn");
 honk.addEventListener("click", function(event) {
   event.preventDefault();
+  sound.currentTime = 0;
   sound.play();
   });
 
