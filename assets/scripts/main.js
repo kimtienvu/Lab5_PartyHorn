@@ -2,11 +2,11 @@
 // Global variables declared here
 // Input field
 let input = document.getElementById("volume-number");
-input.addEventListener("change", changeSlider);
+input.addEventListener("input", changeSlider);
 
 // Slider
 let slider = document.getElementById("volume-slider");
-slider.addEventListener("change", changeInput);
+slider.addEventListener("input", changeInput);
 
 // Volume image
 let volImg = document.getElementById("volume-image");
